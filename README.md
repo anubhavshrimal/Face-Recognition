@@ -17,7 +17,7 @@ Machine Learning project to recognise people from an Image just like facebook.
     ```
     Then copy all the images of that person in `./training-images/Name_Of_Person` folder.
 
-    <img src='./screenshorts/training-images-folder-view.png' width='700px'>
+    <img src='./screenshorts/training-images-folder-view.png' width='300px'>
 
 - Run on cmd `python create_encodings.py` to get the encodings of the images and the labels.
     This will create `encoded-images-data.csv` and `labels.pkl` files.
@@ -35,7 +35,7 @@ Machine Learning project to recognise people from an Image just like facebook.
 ### Prediction:
 - Make folder `test-images` which contains all the images you want to find people in.
 
-    <img src='./screenshorts/test-images-folder-view.png' width='700px'>
+    <img src='./screenshorts/test-images-folder-view.png' width='300px'>
 
 - Run on cmd `python predict.py` to predict the faces in each image.
 
