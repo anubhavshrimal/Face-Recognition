@@ -2,7 +2,6 @@ import os
 import face_recognition_api
 import pickle
 import numpy as np
-import warnings
 import pandas as pd
 
 
@@ -34,7 +33,7 @@ if os.path.isfile(fname):
     with open(fname, 'rb') as f:
         (le, clf) = pickle.load(f)
 else:
-    warnings.warn("Classifier '{}' does not exist".format(fname))
+    print('\x1b[0;37;43m' + "Classifier '{}' does not exist".format(fname) + '\x1b[0m')
     quit()
 
 for image_path in get_prediction_images(prediction_dir):
