@@ -48,9 +48,9 @@ def create_dataset(training_dir_path, labels):
             imgEncoding = face_recognition_api.face_encodings(img)
 
             if len(imgEncoding) > 1:
-                print('More than one face found in {}. Only considering the first face.'.format(file_path))
+                print('\x1b[0;37;43m' + 'More than one face found in {}. Only considering the first face.'.format(file_path) + '\x1b[0m')
             if len(imgEncoding) == 0:
-                print('No face found in {}. Ignoring file.'.format(file_path))
+                print('\x1b[0;37;41m' + 'No face found in {}. Ignoring file.'.format(file_path) + '\x1b[0m')
             else:
                 print('Encoded {} successfully.'.format(file_path))
                 X.append(np.append(imgEncoding[0], i[1]))
@@ -77,7 +77,7 @@ if os.path.isfile(encoding_file_path):
 df.to_csv(encoding_file_path)
 
 print("{} classes created.".format(nClasses))
-print("Saving labels pickle to'{}'".format(labels_fName))
+print('\x1b[6;30;42m' + "Saving labels pickle to'{}'".format(labels_fName) + '\x1b[0m')
 with open(labels_fName, 'wb') as f:
     pickle.dump(le, f)
-print("Training Image's encodings saved in {}".format(encoding_file_path))
+print('\x1b[6;30;42m' + "Training Image's encodings saved in {}".format(encoding_file_path) + '\x1b[0m')
