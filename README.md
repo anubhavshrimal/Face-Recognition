@@ -10,8 +10,9 @@ The model has an accuracy of 99.38% on the [Labeled Faces in the Wild](http://vi
 - Python 3.x
 - Numpy
 - Scipy
-- [scikit learn](http://scikit-learn.org/stable/install.html)
+- [Scikit-learn](http://scikit-learn.org/stable/install.html)
 - [dlib](http://dlib.net/)
+
     Tip: Installing dlib can be a tedious job. On macOS or Linux you may follow [this link](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf).
 
 - Extras:
@@ -34,6 +35,7 @@ The model has an accuracy of 99.38% on the [Labeled Faces in the Wild](http://vi
 
     Example
     ```bash
+    $ mkdir training-images
     $ cd training-images
     $ mkdir Name_Of_Person
     ```
