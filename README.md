@@ -2,6 +2,25 @@
 
 Machine Learning project to recognise people from an Image just like facebook.
 
+Built with the help of [dlib's](http://dlib.net/) state-of-the-art face recognition built with deep learning.
+
+## Dependencies:
+
+- Python 3.x
+- [dlib](http://dlib.net/)
+
+    Tip: Installing dlib can be a tedious job. On macOS or Linux you may follow [this link](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf).
+
+- Extras:
+    For using `./demo-python-files/projecting_faces.py` you will need to install [openface](https://cmusatyalab.github.io/openface/setup/).
+    ```
+    To install openface, follow the below instructions:
+        git clone https://github.com/cmusatyalab/openface.git
+        cd openface
+        pip install -r requirements.txt
+        sudo python setup.py install
+    ```
+
 ## Procedure:
 
 - Clone this repository `git clone git@github.com:anubhavshrimal/FaceRecognition.git`.
