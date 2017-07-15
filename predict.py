@@ -47,15 +47,15 @@ for image_path in get_prediction_images(prediction_dir):
     for face_encoding in faces_encodings:
         face_encoding = face_encoding.reshape(1, -1)
 
-        # predictions = clf.predict_proba(face_encoding).ravel()
-        # maxI = np.argmax(predictions)
-        # person = le.inverse_transform(maxI)
-        # confidence = predictions[maxI]
-        # print("Predict {} with {:.2f} confidence.".format(person, confidence))
+        predictions = clf.predict_proba(face_encoding).ravel()
+        maxI = np.argmax(predictions)
+        person = le.inverse_transform(maxI)
+        confidence = predictions[maxI]
+        print("Predict {} with {:.2f} confidence.".format(person, confidence))
 
         # print(face_recognition_api.compare_faces(X, face_encoding))
-
-        predictions = clf.predict(face_encoding).ravel()
-        person = le.inverse_transform(int(predictions[0]))
-        print("Predict {}.".format(person))
+        #
+        # predictions = clf.predict(face_encoding).ravel()
+        # person = le.inverse_transform(int(predictions[0]))
+        # print("Predict {}.".format(person))
     print()
