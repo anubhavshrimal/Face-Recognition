@@ -16,7 +16,8 @@ The model has an accuracy of 99.38% on the [Labeled Faces in the Wild](http://vi
     Tip: Installing dlib can be a tedious job. On macOS or Linux you may follow [this link](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf).
 
 - Extras:
-    For using `./demo-python-files/projecting_faces.py` you will need to install [openface](https://cmusatyalab.github.io/openface/setup/).
+
+    For using `./demo-python-files/projecting_faces.py` you will need to install [Openface](https://cmusatyalab.github.io/openface/setup/).
     ```
     To install openface, follow the below instructions:
         git clone https://github.com/cmusatyalab/openface.git
@@ -69,4 +70,4 @@ The model has an accuracy of 99.38% on the [Labeled Faces in the Wild](http://vi
 ## Vote of Thanks
 - Thanks to [Adam Geitgey](https://github.com/ageitgey) whose blog inspired me to make this project.
 - Thanks to [Davis King](https://github.com/davisking) for creating dlib and for providing the trained facial feature
-  detection and face encoding models used in this library.
+  detection and face encoding models used in this project.
