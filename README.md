@@ -16,19 +16,21 @@ The model has an accuracy of 99.38% on the [Labeled Faces in the Wild](http://vi
     Tip: Installing dlib can be a tedious job. On macOS or Linux you may follow [this link](https://gist.github.com/ageitgey/629d75c1baac34dfa5ca2a1928a7aeaf).
 
 - Extras:
-    OpenCV (required only in `webcam.py` for capturing frames from the webcam)
 
-    For using `./demo-python-files/projecting_faces.py` you will need to install [Openface](https://cmusatyalab.github.io/openface/setup/).
-    ```
-    To install Openface, follow the below instructions:
-        git clone https://github.com/cmusatyalab/openface.git
-        cd openface
-        pip install -r requirements.txt
-        sudo python setup.py install
-    ```
+    - OpenCV (required only in `webcam.py` for capturing frames from the webcam)
+
+    - For using `./demo-python-files/projecting_faces.py` you will need to install [Openface](https://cmusatyalab.github.io/openface/setup/).
+
+        To install Openface, follow the below instructions:
+        ```bash
+            $ git clone https://github.com/cmusatyalab/openface.git
+            $ cd openface
+            $ pip install -r requirements.txt
+            $ sudo python setup.py install
+        ```
 
 ## Result:
-<img src='https://user-images.githubusercontent.com/17249362/28241776-a45a5eb0-69b8-11e7-9024-2a7a776914e6.gif' width='450px'>
+<img src='https://user-images.githubusercontent.com/17249362/28241776-a45a5eb0-69b8-11e7-9024-2a7a776914e6.gif' width='700px'>
 
 ## Procedure:
 
