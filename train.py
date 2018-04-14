@@ -32,8 +32,8 @@ X = np.array(full_data[:, 1:-1])
 y = np.array(full_data[:, -1:])
 
 # fit the data into a support vector machine
-clf = svm.SVC(C=1, kernel='linear', probability=True)
-# clf = neighbors.KNeighborsClassifier(n_neighbors=3)
+# clf = svm.SVC(C=1, kernel='linear', probability=True)
+clf = neighbors.KNeighborsClassifier(n_neighbors=3, algorithm='ball_tree', weights='distance')
 clf.fit(X, y.ravel())
 
 

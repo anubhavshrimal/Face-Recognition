@@ -4,7 +4,6 @@ import pickle
 import numpy as np
 import pandas as pd
 
-
 def get_prediction_images(prediction_dir):
     files = [x[2] for x in os.walk(prediction_dir)][0]
     l = []
@@ -41,21 +40,28 @@ for image_path in get_prediction_images(prediction_dir):
     print('\x1b[6;30;42m' + "=====Predicting faces in '{}'=====".format(image_path) + '\x1b[0m')
 
     img = face_recognition_api.load_image_file(image_path)
-    faces_encodings = face_recognition_api.face_encodings(img)
+    X_faces_loc = face_recognition_api.face_locations(img)
+
+    faces_encodings = face_recognition_api.face_encodings(img, known_face_locations=X_faces_loc)
     print("Found {} faces in the image".format(len(faces_encodings)))
 
-    for face_encoding in faces_encodings:
-        face_encoding = face_encoding.reshape(1, -1)
+    closest_distances = clf.kneighbors(faces_encodings, n_neighbors=1)
 
-        predictions = clf.predict_proba(face_encoding).ravel()
-        maxI = np.argmax(predictions)
-        person = le.inverse_transform(maxI)
-        confidence = predictions[maxI]
-        print("Predict {} with {:.2f} confidence.".format(person, confidence))
+    is_recognized = [closest_distances[0][i][0] <= 0.5 for i in range(len(X_faces_loc))]
 
-        # print(face_recognition_api.compare_faces(X, face_encoding))
-        #
-        # predictions = clf.predict(face_encoding).ravel()
-        # person = le.inverse_transform(int(predictions[0]))
-        # print("Predict {}.".format(person))
+    # predict classes and cull classifications that are not with high confidence
+    predictions = [(le.inverse_transform(int(pred)).title(), loc) if rec else ("Unknown", loc) for pred, loc, rec in
+                   zip(clf.predict(faces_encodings), X_faces_loc, is_recognized)]
+
+    print(predictions)
+
+    # for face_encoding in faces_encodings:
+    #     face_encoding = face_encoding.reshape(1, -1)
+    #
+    #     predictions = clf.predict_proba(face_encoding).ravel()
+    #     maxI = np.argmax(predictions)
+    #     person = le.inverse_transform(maxI)
+    #     confidence = predictions[maxI]
+    #     print("Predict {} with {:.2f} confidence.".format(person, confidence))
+
     print()
